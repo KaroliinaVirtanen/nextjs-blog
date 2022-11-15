@@ -5,19 +5,88 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
+  background-color: #1c1b1b;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.bold-pink {
+	font-size: calc(1em + 20vw);
+  line-height: 1.3;
+  margin: 0.5rem;
+	font-weight: 900;
+  -webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;	
+	background-image: url(/images/vertical-darkroses.jpg);
+	background-size: auto;
+	background-attachment: unset;
+	background-position: 0%;
+	animation: effect-moving infinite 180s;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: linear;
+	text-align: center;
+}
+
+@keyframes effect-moving {
+	0% {
+		background-position: 0%;	
+	}
+	50% {
+		background-position: 100%;	
+	}
+	100% {
+		background-position: 0%;
+	}
+}
+
+.box {
+  padding: 1rem 0 2rem 0;
+}
+
+.box span {
+	width: 20px;
+	height: 20px;
+  display: block;
+	border-right: 3px solid #ece7e7;
+	border-bottom: 3px solid #ece7e7;
+	transform: rotate(45deg);
+	margin: -10px;
+	animation: animate 2s infinite;
+}
+
+.box span:nth-child(2) {
+	animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+	animation-delay: -0.4s;
+}
+
+@keyframes animate {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+		transform: rotate(45deg) translate(10px, 10px);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 a {
-  color: #0070f3;
-  text-decoration: none;
+  color: #c55f4e;
+  text-decoration: underline;
+  font-size: 16px;
 }
 
 a:hover {
+  color: darkred;
   text-decoration: underline;
 }
 
@@ -25,3 +94,32 @@ img {
   max-width: 100%;
   display: block;
 }
+
+footer {
+  background-color: rgb(61, 61, 61);
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+p {
+  color: #ece7e7;
+  font-size: 16px;
+  text-align: center;
+}
+
+article {
+  /*  leverage cascade for cross-browser gradients  */
+  background: radial-gradient(
+    hsl(9, 51%, 54%), 
+    hsl(19, 61%, 85%) 
+  ) fixed;
+  background: conic-gradient(
+    hsl(9, 51%, 54%), 
+    hsl(19, 61%, 85%),
+    hsl(9, 51%, 54%)
+  ) fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+} 

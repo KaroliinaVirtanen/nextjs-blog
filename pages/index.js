@@ -3,7 +3,6 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Date from '../components/date';
-
 import { getSortedPostsData } from '../lib/posts';
 
 export async function getStaticProps() {
@@ -22,14 +21,14 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Hi, I am <b>Karoliina</b>, ex-flight attendant who rekindled her childhood dream about coding a year ago.]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <p>Next.js is a React framework that gives you building blocks to create web applications.</p>
+        <p>By framework, we mean Next.js handles the tooling and configuration needed for React, and provides
+          additional structure, features, and optimizations for your application.</p>
+          <p>What is React? React is a JavaScript library for building interactive user interfaces. By user interfaces,
+            we mean the elements that users see and interact with on-screen. (Source: Next.js)</p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding2rem} `}>
+        <h2 className={utilStyles.headingLg}>Learn more from the blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
            <li className={utilStyles.listItem} key={id}>
@@ -44,6 +43,15 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
+      <footer className="row">
+            <div>
+                <p>Karoliina - My First Next.js app.</p>
+            </div>
+            <div>
+                <p>(Learn to build a site like this yourself! {' '}
+          <a href="https://nextjs.org/learn">Head over to the Next.js tutorial</a>.)</p>
+            </div>
+        </footer>
     </Layout>
   );
 }

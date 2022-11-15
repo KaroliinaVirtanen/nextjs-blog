@@ -4,8 +4,8 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Karoliina';
-export const siteTitle = 'Next.js Sample Website';
+const name = 'Next.js';
+export const siteTitle = 'Karoliinas first Next.js website';
 
 export default function Layout({ children, home }) {
   return (
@@ -30,13 +30,23 @@ export default function Layout({ children, home }) {
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/images/nextjs-icon.png"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt=""
+              height={150}
+              width={150}
+              alt="Next.js icon that has a white N-letter inside a black circle."
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className="bold-pink rose-text">next.js</h1>
+            <section>
+              <a href="#demo">
+                <div class="box">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+            </section>
+            <h2 className={utilStyles.heading2Xl}>What's {name}?</h2>
           </>
         ) : (
           <>
@@ -44,7 +54,7 @@ export default function Layout({ children, home }) {
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src="/images/nextjs-icon.png"
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
@@ -62,7 +72,7 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className={utilStyles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
